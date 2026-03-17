@@ -57,6 +57,7 @@ public class Main
 
             call_to(num, 0);
             call_from(num, 0);
+            System.out.println();
 
             line = br.readLine();
         }
