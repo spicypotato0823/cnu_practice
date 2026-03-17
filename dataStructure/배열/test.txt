@@ -6,4 +6,3 @@
 18
 1 2 3
 10
->>>>>>> 0b97dda1e19655922bb3d1bccd5264c14b6d7aa2:dataStructure/배열/test.txt

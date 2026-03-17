@@ -45,7 +45,7 @@ public class DS01_1
     {
         try
         {
-        File file = new File("test.txt");
+        File file = new File("DS01_1_test.txt");
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line = br.readLine();

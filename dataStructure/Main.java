@@ -45,7 +45,8 @@ public class Main
 
         while(line != null) 
         {
-            StringTokenizer st = new StringTokenizer(line, " ");
+            
+            StringTokenizer st = new StringTokenizer(line);
             int [] num = new int[st.countTokens()]; 
 
             for(int i = 0; i < num.length; i++) 
