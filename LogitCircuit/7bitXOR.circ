@@ -124,7 +124,7 @@
     <comp lib="1" loc="(350,190)" name="XOR Gate"/>
     <comp lib="1" loc="(350,330)" name="XOR Gate"/>
     <comp lib="1" loc="(460,260)" name="XOR Gate"/>
-    <comp lib="1" loc="(560,580)" name="XOR Gate"/>
+    <comp lib="1" loc="(550,580)" name="Odd Parity"/>
     <comp lib="1" loc="(590,250)" name="XOR Gate"/>
     <wire from="(100,130)" to="(170,130)"/>
     <wire from="(100,170)" to="(170,170)"/>
@@ -177,7 +177,7 @@
     <wire from="(480,90)" to="(480,230)"/>
     <wire from="(500,260)" to="(500,270)"/>
     <wire from="(500,270)" to="(530,270)"/>
-    <wire from="(560,580)" to="(600,580)"/>
+    <wire from="(550,580)" to="(600,580)"/>
     <wire from="(590,250)" to="(620,250)"/>
   </circuit>
 </project>
