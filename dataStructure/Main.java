@@ -8,29 +8,29 @@ import java.util.StringTokenizer;
 public class Main 
 {
 
-    public static void call_to(int[] a, int i)// i => 출력해야 할 다음 값의 인덱스
+    public static void call_to(int[] a, int i)// 1
     {
-        if(a[i] == 0) // 종료 조건
+        if(a[i] == 0) // 2
         {
             System.out.println(i);
         }
         else
         {
-            System.out.print(i + " "); //i 값을 먼저 출력
-            call_to(a, a[i]);//인덱스 i가 가지고 있는 값을 i로 넣어 재귀함수 호출 
+            System.out.print(i + " "); // 3
+            call_to(a, a[i]);// 4
         }
     }
 
-    public static void call_from(int[] a, int j)// j => 출력해야 할 마지막 값??
+    public static void call_from(int[] a, int j)// 5
     {
-        if(a[j] == 0) // 종료 조건
+        if(a[j] == 0) // 6
         {
-            System.out.print(j + " ");// 0이 가장 먼저 출력 
+            System.out.print(j + " ");// 7
         }
         else
         {
-            call_from(a, a[j]);//출력하기 전에 재귀함수를 호출해 다음값으로 넘어가기
-            System.out.print(j + " ");// 0이 출력된 후 그 다음 요소를 출력
+            call_from(a, a[j]);// 8
+            System.out.print(j + " ");// 9
         }
     }
 
@@ -39,7 +39,7 @@ public class Main
         
         try
         {
-        File file = new File("test.txt");
+        File file = new File("dataStructure/TEST.txt");
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line = br.readLine();

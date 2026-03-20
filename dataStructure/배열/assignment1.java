@@ -1,7 +1,9 @@
+package 배열;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main 
+public class assignment1
 {
     public static int[] findPair(int arr[], int S) 
     {
@@ -45,7 +47,7 @@ public class Main
     {
         try
         {
-        File file = new File("test.txt");
+        File file = new File("TEST.txt");
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line = br.readLine();
