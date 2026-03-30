@@ -5,17 +5,29 @@
 
 int main() 
 {
-    int x = 0;
-    scanf("%d", &x);
-    
-    for(int i = 0; i < x; i++)
+    int n = 0;
+    scanf("%d", &n);
+    int num [n];
+    int t;
+    for(int i = 0; i < n; i++)
     {
-        for(int j = 0; j <= i; j++)
+        int number;
+        scanf("%d", &number);
+        num[i] = number;
+    }
+    scanf("%d", &t);
+    int i = 0;
+    for(i = 0; i < n; i++)
+    {
+        if(num[i] == t)
         {
-            printf("*");
+            printf("%d", i);
+            break;
         }
-
-        printf("\n");
+    }
+    if(i == n)
+    {
+        printf("-1");
     }
     return 0;
 }
