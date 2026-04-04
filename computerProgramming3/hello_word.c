@@ -1,17 +1,42 @@
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
-int main(void)
+int main() 
 {
-    char a[] = {100, 200, 300};
-    int min = -1;
+    char c = getchar();
+    char str[100];
+    char * p = str;
+    *p = c;
+    
+    int i = 1;
+    int count = 0;
 
-    if(sizeof(a) > min)
+    do
     {
-        printf("first element is %d\n", a[0]);
-    }
-    else
+        if(*(p + i - 1) == c)
+        {
+            count++;
+        }
+        else
+        {
+            *(p + i) = count + 48;
+            count = 1;
+            i++;
+            *(p + i) = c;
+            i++;
+        }
+        
+    }while((c = getchar()) != EOF);
+    
+    *(p + i) = count + 48;
+    i++;
+    
+    for(int j = 0; j < i; j++)
     {
-        printf("too small array!\n");
+        printf("%c", *(p + j));
     }
+    
     return 0;
 }

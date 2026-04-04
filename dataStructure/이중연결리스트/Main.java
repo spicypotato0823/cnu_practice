@@ -44,13 +44,12 @@ public class Main
                 return;
             }
             DNode cursor = head;
-            do
+            while (cursor != null)
             {
                 System.out.print(cursor.getItem() + " ");
                 cursor = cursor.getNext();
             }
-            while (cursor != tail);
-            System.out.println(cursor.getItem());
+            System.out.println();
 
         }
         public void insertFront(int X)
