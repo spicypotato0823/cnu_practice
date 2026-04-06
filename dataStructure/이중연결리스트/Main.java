@@ -109,8 +109,6 @@ public class Main
 
                 list.print();
 
-
-
                 line = br.readLine();
             }
             br.close();
