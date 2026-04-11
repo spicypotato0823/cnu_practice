@@ -62,48 +62,29 @@ public class Main
     }
     public static int operation(int a, int b, String operator)
     {
-        if(operator.equals("*"))
-        {
-            return a * b;
-        }
-        else if(operator.equals("/"))
-        {
-            return a / b;
-        }
-        else if(operator.equals("-"))
-        {
-            return a - b;
-        }
-        else
-        {
-            return a + b;
-        }
+        if(operator.equals("*")) return a * b;
+
+        else if(operator.equals("/")) return a / b;
+
+        else if(operator.equals("-")) return a - b;
+
+        else return a + b;
     }
 
-    public static int compareOperator(String op1, String op2)//op1이 최근에 들어온 놈, op2가 이미 있었던 놈
+    public static int compareOperator(String op1, String op2)
     {
         int op1Num = 0;
         int op2Num = 0;
 
-        if(op1.equals("*") || op1.equals("/"))
-        {
-            op1Num = 2;
-        }
-        else if(op1.equals("+") || op1.equals("-"))
-        {
-            op1Num = 1;
-        }
+        if(op1.equals("*") || op1.equals("/")) op1Num = 2;
 
-        if(op2.equals("*") || op2.equals("/"))
-        {
-            op2Num = 2;
-        }
-        else if(op2.equals("+") || op2.equals("-"))
-        {
-            op2Num = 1;
-        }
+        else if(op1.equals("+") || op1.equals("-")) op1Num = 1;
 
-        return op1Num - op2Num; // op1이 더 크면 0 보다 큼, 같으면 0, 작으면 0보다 작음
+        if(op2.equals("*") || op2.equals("/")) op2Num = 2;
+
+        else if(op2.equals("+") || op2.equals("-")) op2Num = 1;
+
+        return op1Num - op2Num;
     }
 
     public static int calc_infix(String s)
@@ -111,19 +92,15 @@ public class Main
         ListStack<Integer> operandList = new ListStack<Integer>();
         ListStack<String> operatorList = new ListStack<String>();
         StringTokenizer st = new StringTokenizer(s);
-
         int size = st.countTokens();
 
         for(int i = 0; i < size; i++)
         {
             String input = st.nextToken();
-
             int p;
 
-            if(input.equals("("))
-            {
-                operatorList.push("(");
-            }
+            if(input.equals("(")) operatorList.push("(");
+
             else if(input.equals(")"))
             {
                 while(!operatorList.peek().equals("("))
@@ -131,7 +108,6 @@ public class Main
                     int b = operandList.pop();
                     int a = operandList.pop();
                     p = operation(a, b, operatorList.pop());
-                    System.out.println("operation : " + p);
                     operandList.push(p);
                 }
                 operatorList.pop();
@@ -149,7 +125,6 @@ public class Main
                         int b = operandList.pop();
                         int a = operandList.pop();
                         p = operation(a, b, operatorList.pop());
-                        System.out.println("operation : " + p);
                         operandList.push(p);
                         operatorList.push("*");
                     }
@@ -173,7 +148,6 @@ public class Main
                         int a = operandList.pop();
                         p = operation(a, b, operatorList.pop());
                         operandList.push(p);
-                        System.out.println("operation : " + p);
                         operatorList.push("/");
                     }
                 }
@@ -195,7 +169,6 @@ public class Main
                             int b = operandList.pop();
                             int a = operandList.pop();
                             p = operation(a, b, operatorList.pop());
-                            System.out.println("operation : " + p);
                             operandList.push(p);
 
                             if (operatorList.isEmpty()) {
@@ -224,7 +197,6 @@ public class Main
                             int b = operandList.pop();
                             int a = operandList.pop();
                             p = operation(a, b, operatorList.pop());
-                            System.out.println("operation : " + p);
                             operandList.push(p);
                             if (operatorList.isEmpty()) {
                                 break;
@@ -249,7 +221,6 @@ public class Main
             int b = operandList.pop();
             int a = operandList.pop();
             int p = operation(a, b, operatorList.pop());
-            System.out.println("operation : " + p);
             operandList.push(p);
         }
         return operandList.pop();
