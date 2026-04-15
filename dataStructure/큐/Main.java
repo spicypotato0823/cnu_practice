@@ -70,7 +70,7 @@ public class Main
         {
             if(last == null)
             {
-                System.out.println("Queue is empty!");
+                System.out.println("Queue is empty");
                 return;
             }
             Node <Integer> cursor = last;

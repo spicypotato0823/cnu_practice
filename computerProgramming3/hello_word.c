@@ -3,40 +3,26 @@
 #include <math.h>
 #include <stdlib.h>
 
+void swap(int * a, int * b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int main() 
 {
-    char c = getchar();
-    char str[100];
-    char * p = str;
-    *p = c;
-    
-    int i = 1;
-    int count = 0;
+    int num1 = 10;
+    int num2 = 20;
 
-    do
-    {
-        if(*(p + i - 1) == c)
-        {
-            count++;
-        }
-        else
-        {
-            *(p + i) = count + 48;
-            count = 1;
-            i++;
-            *(p + i) = c;
-            i++;
-        }
-        
-    }while((c = getchar()) != EOF);
-    
-    *(p + i) = count + 48;
-    i++;
-    
-    for(int j = 0; j < i; j++)
-    {
-        printf("%c", *(p + j));
-    }
-    
+    int * p = &num1;
+    int ** dp = &p;
+
+    swap(&num1, &num2);
+
+    printf("%d %d\n", num1, num2);
+
+    printf("dp : %p p : %p num1 : %p", &dp, &p, &num1);
+
     return 0;
 }
